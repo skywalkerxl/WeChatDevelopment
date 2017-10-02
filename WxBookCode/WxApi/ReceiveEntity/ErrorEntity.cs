@@ -36,8 +36,11 @@ namespace WxApi.ReceiveEntity
                 var temp = Code.CodeInfo.Split(new char[]{'\r','\n'},
                     StringSplitOptions.RemoveEmptyEntries);
 
-                //foreach(var strArr in temp.Select(str => str.Split))
-                return " ";
+                foreach(var strArr in temp.Select(str => str.Split('\t')))
+                {
+                    _errorDic.Add(int.Parse(strArr[0]), strArr[1]);
+                }
+                return _errorDic;
             }
         }
     }
