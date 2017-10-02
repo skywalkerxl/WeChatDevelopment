@@ -1,0 +1,5 @@
+D:\MyRepository\WxBookCode\WxApi\obj\Debug\WxApi.csprojResolveAssemblyReference.cache
+D:\MyRepository\WxBookCode\WxApi\bin\Debug\WxApi.dll
+D:\MyRepository\WxBookCode\WxApi\bin\Debug\WxApi.pdb
+D:\MyRepository\WxBookCode\WxApi\obj\Debug\WxApi.dll
+D:\MyRepository\WxBookCode\WxApi\obj\Debug\WxApi.pdb

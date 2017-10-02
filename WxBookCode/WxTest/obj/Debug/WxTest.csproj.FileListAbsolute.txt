@@ -1,0 +1,8 @@
+D:\MyRepository\WxBookCode\WxTest\bin\WxTest.dll.config
+D:\MyRepository\WxBookCode\WxTest\bin\WxTest.dll
+D:\MyRepository\WxBookCode\WxTest\bin\WxTest.pdb
+D:\MyRepository\WxBookCode\WxTest\obj\Debug\WxTest.csprojResolveAssemblyReference.cache
+D:\MyRepository\WxBookCode\WxTest\obj\Debug\WxTest.dll
+D:\MyRepository\WxBookCode\WxTest\obj\Debug\WxTest.pdb
+D:\MyRepository\WxBookCode\WxTest\bin\WxApi.dll
+D:\MyRepository\WxBookCode\WxTest\bin\WxApi.pdb
