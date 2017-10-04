@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WxApi.ReceiveEntity
 {
+    /// <summary>
+    /// 错误信息实体
+    /// </summary>
     public class ErrorEntity
     {
         public int _errCode { get; set; }
@@ -22,6 +25,9 @@ namespace WxApi.ReceiveEntity
                 ErrDescription = ErrList.FirstOrDefault(e=>e.Key==value).Value;
             }
         } 
+        /// <summary>
+        /// 错误描述
+        /// </summary>
         public string ErrDescription { get; set; }
 
         private static Dictionary<int, string> _errorDic;

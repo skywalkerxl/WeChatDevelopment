@@ -14,6 +14,14 @@ namespace WxTest
         public void ProcessRequest(HttpContext context)
         {
             var url = context.Request.RawUrl;
+            var ip = context.Request.UserHostAddress;
+            var ipEntity = BaseServices.GetIpArray("你的access_token");
+            if(ipEntity!=null && !ipEntity.ip_list.Contains(ip))
+            {
+                context.Response.Write("非法请求");
+                return;
+            }
+            
             if(context.Request.HttpMethod=="GET")
             {   
                 BaseServices.ValidUrl("skywalkerxl");

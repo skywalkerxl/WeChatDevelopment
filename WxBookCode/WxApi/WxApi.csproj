@@ -50,6 +50,7 @@
       <DependentUpon>Code.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiveEntity\AccessToken.cs" />
     <Compile Include="ReceiveEntity\ErrorEntity.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
