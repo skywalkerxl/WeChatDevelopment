@@ -295,6 +295,10 @@ namespace WxApi
             var startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));
             return (int)(time - startTime).TotalSeconds;
         }
+        /// <summary>
+        /// 打印到控制台
+        /// </summary>
+        /// <param name="txt"></param>
         public static void OutPrint(string txt)
         {
 

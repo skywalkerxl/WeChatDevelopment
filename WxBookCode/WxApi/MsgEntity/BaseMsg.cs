@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using WxApi.SendEntity;
 
 namespace WxApi.MsgEntity
 {
@@ -38,6 +39,58 @@ namespace WxApi.MsgEntity
             resxml.AppendFormat("<CreateTime>{0}</CreateTime>", Utils.ConvertDateTimeInt(DateTime.Now));
             resxml.Append("<MsgType><![CDATA[text]]></MsgType>");
             resxml.AppendFormat("<Content><![CDATA[{0}]]></Content></xml>", content);
+            HttpContext.Current.Response.Write(resxml);
+            return;
+        }
+        /// <summary>
+        /// 回复消息，图片
+        /// </summary>
+        /// <param name="media_id"></param>
+        public void ResPicture (string media_id)
+        {
+            var resxml = new StringBuilder();
+            resxml.AppendFormat("<xml><ToUserName><![CDATA[{0}]]></ToUserName>", FromUserName);
+            resxml.AppendFormat("<FromUserName><![CDATA[{0}]]></FromUserName>", ToUserName);
+            resxml.AppendFormat("<CreateTime>{0}</CreateTime>", Utils.ConvertDateTimeInt(DateTime.Now));
+            resxml.Append("<MsgType><![CDATA[image]]></MsgType>");
+            resxml.AppendFormat("<Image><MediaId><![CDATA[{0}]]></MediaId></Image></xml>", media_id);
+            HttpContext.Current.Response.Write(resxml);
+            return;
+        }
+        /// <summary>
+        /// 回复消息，视频
+        /// </summary>
+        /// <param name="video"></param>
+        public void ResVideo(ResVideo video)
+        {
+            var resxml = new StringBuilder();
+            resxml.AppendFormat("<xml><ToUserName><![CDATA[{0}]]></ToUserName>", FromUserName);
+            resxml.AppendFormat("<FromUserName><![CDATA[{0}]]></FromUserName>", ToUserName);
+            resxml.AppendFormat("<CreateTime>{0}</CreateTime>", Utils.ConvertDateTimeInt(DateTime.Now));
+            resxml.Append("<MsgType><![CDATA[video]]></MsgType>");
+            resxml.AppendFormat("<Video><MediaId><![CDATA[{0}]]></MediaId></Video>", video.MediaId);
+            resxml.AppendFormat("<Title><![CDATA[{0}]]></Title>", video.Title);
+            resxml.AppendFormat("<Description><![CDATA[{0}]]></Description></xml>", video.Description);
+            HttpContext.Current.Response.Write(resxml);
+            return;
+        }
+
+        public void ResArticles(List<ResArticle> artList)
+        {
+            var resxml = new StringBuilder();
+            resxml.AppendFormat("<xml><ToUserName><![CDATA[{0}]]></ToUserName>", FromUserName);
+            resxml.AppendFormat("<FromUserName><![CDATA[{0}]]></FromUserName>", ToUserName);
+            resxml.AppendFormat("<CreateTime>{0}</CreateTime>", Utils.ConvertDateTimeInt(DateTime.Now));
+            resxml.Append("<MsgType><![CDATA[news]]></MsgType>");
+            resxml.AppendFormat("<ArticleCount>{0}</ArticleCount><Articles>", artList.Count);
+            foreach(var article in artList)
+            {
+                resxml.AppendFormat("<item><Title><![CDATA[{0}]]></Title>", article.Title);
+                resxml.AppendFormat("<PicUrl><![CDATA[{0}]]></PicUrl>", article.PicUrl);
+                resxml.AppendFormat("<Url><![CDATA[{0}]]></Url>", article.Url);
+                resxml.AppendFormat("<Description><![CDATA[{0}]]></Description></item>", article.Description);
+            }
+            resxml.Append("</Articles></xml>");
             HttpContext.Current.Response.Write(resxml);
             return;
         }
