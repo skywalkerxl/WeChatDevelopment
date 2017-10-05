@@ -3,3 +3,10 @@ D:\MyRepository\WxBookCode\WxApi\bin\Debug\WxApi.dll
 D:\MyRepository\WxBookCode\WxApi\bin\Debug\WxApi.pdb
 D:\MyRepository\WxBookCode\WxApi\obj\Debug\WxApi.dll
 D:\MyRepository\WxBookCode\WxApi\obj\Debug\WxApi.pdb
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\bin\Debug\WxApi.dll
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\bin\Debug\WxApi.pdb
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\bin\Debug\Newtonsoft.Json.dll
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\obj\Debug\WxApi.Code.resources
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\obj\Debug\WxApi.csproj.GenerateResource.Cache
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\obj\Debug\WxApi.dll
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\obj\Debug\WxApi.pdb

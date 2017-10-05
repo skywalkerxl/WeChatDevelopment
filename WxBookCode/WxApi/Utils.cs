@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 using System.Web;
+using System.Xml.Linq;
+using WxApi.MsgEntity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -64,7 +66,6 @@ namespace WxApi
             return responseStr;
         }
 
-
         public static string GetRequestData()
         {
             using (var stream = HttpContext.Current.Request.InputStream)
@@ -86,8 +87,6 @@ namespace WxApi
             return JsonConvert.DeserializeObject<T>(retdata);
         }
 
-
-        
         public static string HttpPostForm(string url, List<FormEntity> form)
         {
             // 分割字符串
@@ -157,7 +156,6 @@ namespace WxApi
             
         }
 
-
         /// <summary>
         /// 发起postForm请求，并获取请求的返回值
         /// </summary>
@@ -171,7 +169,6 @@ namespace WxApi
             return JsonConvert.DeserializeObject<T>(retdata);
         }
 
-
         /// <summary>
         /// 发起Get请求，并获取请求返回值
         /// </summary>
@@ -183,7 +180,128 @@ namespace WxApi
             var retdata = HttpGet(url);
             return JsonConvert.DeserializeObject<T>(retdata);
         }
+
+        public class FileStreamInfo : MemoryStream
+        {
+            public string FileName { get; set; }
+        }
+
+        /// <summary>
+        /// 用于下载FileStreamInfo类型的文件流
+        /// </summary>
+        /// <param name="stream"></param>
+        public static void DownLoadStream(FileStreamInfo stream)
+        {
+            var bytes = stream.ToArray();
+            HttpContext.Current.Response.ContentType = "application/octet-stream";
+            HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment;filename=" + HttpContext.Current.Server.UrlDecode(stream.FileName));
+            HttpContext.Current.Response.AddHeader("Content-Length", bytes.Length.ToString());
+            HttpContext.Current.Response.BinaryWrite(bytes);
+            HttpContext.Current.Response.Flush();
+            HttpContext.Current.Response.End();
+        }
+
+        /// <summary>
+        /// 根据文件中的物理路径或网络路径下载文件
+        /// </summary>
+        /// <param name="fileUrl"></param>
+        /// <param name="fileName"></param>
+        public static void DownLoadFile(string fileUrl, string fileName)
+        {
+            using (var client = new WebClient())
+            {
+                var bytes = client.DownloadData(fileUrl);
+                using (var fsi = new FileStreamInfo())
+                {
+                    fsi.Write(bytes, 0, bytes.Length);
+                    fsi.FileName = fileName;
+                    DownLoadStream(fsi);
+                }
+            }
+        }
         
+        public static void DownLoadByPost(string url, string data, Stream stream)
+        {
+            using (var webclient = new WebClient())
+            {
+                var retdata = webclient.UploadData(url, "POST", Encoding.UTF8.GetBytes(data));
+                stream.Write(retdata, 0, retdata.Length);
+            }
+        }
+
+        /// <summary>
+        /// 将微信POST过来的XML数据包转换成对应的实体对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="xmlstr"></param>
+        /// <returns></returns>
+        public static T ConvertObj<T>(string xmlstr)
+        {
+            try
+            {
+                XElement xdoc = XElement.Parse(xmlstr);
+                // 获取转换的数据类型
+                var type = typeof(T);
+                // 创建实例
+                var t = Activator.CreateInstance<T>();
+                #region 基础属性赋值
+                var ToUserName = type.GetProperty("ToUserName");
+                ToUserName.SetValue(t, Convert.ChangeType(xdoc.Element("ToUserName").Value, ToUserName.PropertyType), null);
+                xdoc.Element("ToUserName").Remove();
+
+                var FromUserName = type.GetProperty("FromUserName");
+                FromUserName.SetValue(t, Convert.ChangeType(xdoc.Element("FromUserName").Value, FromUserName.PropertyType), null);
+                xdoc.Element("FromUserName").Remove();
+
+                var CreateTime = type.GetProperty("CreateTime");
+                CreateTime.SetValue(t, Convert.ChangeType(xdoc.Element("CreateTime").Value, CreateTime.PropertyType), null);
+                xdoc.Element("CreateTime").Remove();
+
+                var MsgType = type.GetProperty("MsgType");
+                string msgtype = xdoc.Element("MsgType").Value.ToUpper();
+                MsgType.SetValue(t, (MsgType)Enum.Parse(typeof(MsgType), msgtype), null);
+                xdoc.Element("MsgType").Remove();
+
+                // 判断消息类型是否是事件
+                if(msgtype == "EVENT")
+                {
+                    // 获取事件类型
+                    var EventType = type.GetProperty("Event");
+                    string eventtype = xdoc.Element("Event").Value.ToUpper();
+                    EventType.SetValue(t, (EventType)Enum.Parse(typeof(EventType), eventtype), null);
+                    xdoc.Element("Event").Remove();
+                }
+                #endregion
+
+                // 遍历XML节点
+                foreach(XElement element in xdoc.Elements())
+                {
+                    // 根据XML节点的名称，获取实体的属性
+                    var pr = type.GetProperty(element.Name.ToString());
+                    // 给属性赋值
+                    pr.SetValue(t, Convert.ChangeType(element.Value, pr.PropertyType), null);
+                }
+                return t;
+            }
+            catch(Exception)
+            {
+                return default(T);
+            }
+        }
+
+
+        public static int ConvertDateTimeInt(System.DateTime time)
+        {
+            var startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));
+            return (int)(time - startTime).TotalSeconds;
+        }
+        public static void OutPrint(string txt)
+        {
+
+            System.Diagnostics.Debug.WriteLine("----------------------Receive the message Start----------------------");
+            System.Diagnostics.Debug.WriteLine(txt);
+            System.Diagnostics.Debug.WriteLine("---------------------- Receive the message End ----------------------");   
+        }
     }
 
     public class FormEntity

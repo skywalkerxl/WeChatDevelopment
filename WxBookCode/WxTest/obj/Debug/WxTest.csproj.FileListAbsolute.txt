@@ -6,3 +6,12 @@ D:\MyRepository\WxBookCode\WxTest\obj\Debug\WxTest.dll
 D:\MyRepository\WxBookCode\WxTest\obj\Debug\WxTest.pdb
 D:\MyRepository\WxBookCode\WxTest\bin\WxApi.dll
 D:\MyRepository\WxBookCode\WxTest\bin\WxApi.pdb
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxTest\bin\WxTest.dll.config
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxTest\bin\WxTest.dll
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxTest\bin\WxTest.pdb
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxTest\bin\WxApi.dll
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxTest\bin\Newtonsoft.Json.dll
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxTest\bin\WxApi.pdb
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxTest\obj\Debug\WxTest.csprojResolveAssemblyReference.cache
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxTest\obj\Debug\WxTest.dll
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxTest\obj\Debug\WxTest.pdb
