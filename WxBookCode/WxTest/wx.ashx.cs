@@ -98,6 +98,15 @@ namespace WxTest
                         });
                     #endregion
 
+                    #region 群发消息处理绑定
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.MASSSENDJOBFINISH,
+                        Action = GroupJobHandler
+                    });
+                    #endregion
+
                 }
                 MsgFactory.LoadMsg(MsgHandlerEntity.MsgHandlerEntities);
             }
@@ -175,6 +184,13 @@ namespace WxTest
         {
             var msg = (LocationMsg)baseMsg;
             Utils.OutPrint(msg.Label);
+        }
+        #endregion
+
+        #region 群发消息处理程序
+        private void GroupJobHandler(BaseMsg baseMsg)
+        {
+            // TODO
         }
         #endregion
         public bool IsReusable

@@ -94,6 +94,7 @@ namespace WxApi.MsgEntity
                             // 订阅与取消订阅事件
                             case EventType.UNSUBSCRIBE: msg = Utils.ConvertObj<SubEventMsg>(postStr); break;
                             case EventType.LOCATION: msg = Utils.ConvertObj<LocationEventMsg>(postStr); break;
+                            case EventType.MASSSENDJOBFINISH: msg = Utils.ConvertObj<GroupJobEventMsg>(postStr); break;
                             default:
                                 msg = Utils.ConvertObj<BaseMsg>(postStr); break;
                         }

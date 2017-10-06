@@ -55,16 +55,23 @@
     </Compile>
     <Compile Include="MsgEntity\BaseMsg.cs" />
     <Compile Include="MsgEntity\BMsg.cs" />
+    <Compile Include="MsgEntity\CustomArticles.cs" />
+    <Compile Include="MsgEntity\CustomMusic.cs" />
+    <Compile Include="MsgEntity\CustomVideo.cs" />
     <Compile Include="MsgEntity\MsgFactory.cs" />
     <Compile Include="MsgEntity\MsgHandlerEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiveEntity\AccessToken.cs" />
+    <Compile Include="ReceiveEntity\CustomerServices.cs" />
     <Compile Include="ReceiveEntity\ErrorEntity.cs" />
     <Compile Include="ReceiveEntity\IpEntity.cs" />
     <Compile Include="ReceiveEntity\MaterialLib.cs" />
     <Compile Include="ReceiveEntity\MaterialList.cs" />
     <Compile Include="ReceiveEntity\UpLoadInfo.cs" />
     <Compile Include="SendEntity\Article.cs" />
+    <Compile Include="SendEntity\ResArticle.cs" />
+    <Compile Include="SendEntity\ResMusic.cs" />
+    <Compile Include="SendEntity\ResVideo.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>

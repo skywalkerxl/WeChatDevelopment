@@ -191,7 +191,9 @@ namespace WxApi.MsgEntity
         /// <summary>
         /// 模板消息推送
         /// </summary>
-        TEMPLATESENDJOBFINISH
+        TEMPLATESENDJOBFINISH,
+
+        MASSSENDJOBFINISH
     }
 
     public　class TextMsg:BaseMsg
