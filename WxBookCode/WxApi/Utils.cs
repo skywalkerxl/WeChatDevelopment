@@ -276,6 +276,26 @@ namespace WxApi
                 // 遍历XML节点
                 foreach(XElement element in xdoc.Elements())
                 {
+                    if(msgtype == "EVENT")
+                    {
+                        if(element.Name == "ScanCodeInfo")
+                        {
+                            type.GetProperty("ScanType").SetValue(t, Convert.ChangeType(element.Element("Scantype").Value, TypeCode.String), null);
+                            type.GetProperty("ScanResult").SetValue(t, Convert.ChangeType(element.Element("ScanResult").Value, TypeCode.String), null);
+                            continue;
+                        }
+                        if(element.Name == "SendPicsInfo")
+                        {
+                            type.GetProperty("Count").SetValue(t, Convert.ChangeType(element.Element("Count").Value, TypeCode.Int32), null);
+                            List<string> picMd5List = new List<string>();
+                            foreach(XElement xElement in element.Element("PicList").Elements())
+                            {
+                                picMd5List.Add(xElement.Element("PicMd5Sum").Value);
+                            }
+                            type.GetProperty("PicMd5SumList").SetValue(t, picMd5List, null);
+                            continue;
+                        }
+                    }
                     // 根据XML节点的名称，获取实体的属性
                     var pr = type.GetProperty(element.Name.ToString());
                     // 给属性赋值
@@ -328,4 +348,15 @@ namespace WxApi
 
     }
     
+    public enum MenuType
+    {
+        click,
+        view,
+        scancode_push,
+        scancode_waitmsg,
+        pic_sysphoto,
+        pic_photo_or_album,
+        pic_weixin,
+        location_select
+    }
 }

@@ -45,5 +45,6 @@ namespace WxApi
             var url = string.Format("https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token={0}", accessToken);
             return Utils.GetResult<IpEntity>(url);
         }
+
     }
 }

@@ -30,13 +30,15 @@ namespace WxTest
             {   
                 BaseServices.ValidUrl("skywalkerxl");
             }
+
             else
             {
                 //var xml = Utils.GetRequestData();
-                //System.Diagnostics.Debug.WriteLine("----------------------Receive the message Start----------------------");
+                //System.Diagnostics.Debug.WriteLine("----------------------Receive the xml message Start----------------------");
                 //System.Diagnostics.Debug.WriteLine(xml);
-                //System.Diagnostics.Debug.WriteLine("---------------------- Receive the message End ----------------------");
+                //System.Diagnostics.Debug.WriteLine("---------------------- Receive the xml message End ----------------------");
                 //context.Response.Write("");
+
                 // 判断MsgHandlerEntities是否为空，如果是，则实例化，并将各个消息类型的处理程序实体添加到此列表中
                 // 因为MsgHandlerEntities是静态变量，之需绑定一次即可，免去了重读绑定的性能损耗
                 
