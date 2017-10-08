@@ -29,6 +29,9 @@ namespace WxApi.MsgEntity
             }
             // 获取数据包
             string postStr = Utils.GetRequestData();
+            System.Diagnostics.Debug.Write("\n************************ This is postStr start *************************\n");
+            System.Diagnostics.Debug.Write(postStr);
+            System.Diagnostics.Debug.Write("\n************************  This is postStr end  *************************\n");
             XElement xdoc = XElement.Parse(postStr);
             var msgtype = xdoc.Element("MsgType").Value.ToUpper();
             var FromUserName = xdoc.Element("FromUserName").Value;
@@ -54,6 +57,7 @@ namespace WxApi.MsgEntity
                     return;
                 }
             }
+            // 如果是事件类型
             else
             {
                 // 判断队列中是否已经存在该消息。如果不存在，则将此消息加入队列中；否则返回null
@@ -71,16 +75,13 @@ namespace WxApi.MsgEntity
                     return;
                 }
             }
+            //消息实体对象
             BaseMsg msg = null;
-
             // 事件类型，默认为NOEVENT，即非事件类型
             EventType eventtype = EventType.NOEVENT;
             switch(type)
             {
-                case MsgType.TEXT:
-                    msg = Utils.ConvertObj<TextMsg>(postStr);
-                    break;
-
+                case MsgType.TEXT: msg = Utils.ConvertObj<TextMsg>(postStr); break;
                 case MsgType.IMAGE: msg = Utils.ConvertObj<ImgMsg>(postStr); break;
                 case MsgType.VIDEO: msg = Utils.ConvertObj<VideoMsg>(postStr); break;
                 case MsgType.VOICE: msg = Utils.ConvertObj<VoiceMsg>(postStr); break;
@@ -96,7 +97,7 @@ namespace WxApi.MsgEntity
                             case EventType.LOCATION: msg = Utils.ConvertObj<LocationEventMsg>(postStr); break;
                             case EventType.MASSSENDJOBFINISH: msg = Utils.ConvertObj<GroupJobEventMsg>(postStr); break;
                             default:
-                                msg = Utils.ConvertObj<BaseMsg>(postStr); break;
+                                msg = Utils.ConvertObj<EventMsg>(postStr); break;
                         }
                     }
                     break;
@@ -110,7 +111,6 @@ namespace WxApi.MsgEntity
             {
                 ac(msg);
             }
-
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace WxApi.MsgEntity
         /// <param name="mheList">回调委托列表</param>
         /// <param name="msgType">消息类型</param>
         /// <param name="eventType">回掉委托</param>
-        /// <returns></returns>
+        /// <returns>回调委托</returns>
         private static Action<BaseMsg> GetAction(List<MsgHandlerEntity> mheList, MsgType msgType, EventType eventType)
         {
             MsgHandlerEntity temp = mheList.FirstOrDefault(mhe =>

@@ -322,9 +322,9 @@ namespace WxApi
         public static void OutPrint(string txt)
         {
 
-            System.Diagnostics.Debug.WriteLine("----------------------Receive the message Start----------------------");
+            System.Diagnostics.Debug.WriteLine("\n----------------------Receive the message Start----------------------\n");
             System.Diagnostics.Debug.WriteLine(txt);
-            System.Diagnostics.Debug.WriteLine("---------------------- Receive the message End ----------------------");   
+            System.Diagnostics.Debug.WriteLine("\n---------------------- Receive the message End ----------------------\n");   
         }
     }
 

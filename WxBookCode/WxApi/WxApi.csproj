@@ -53,6 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Code.resx</DependentUpon>
     </Compile>
+    <Compile Include="EnterParam.cs" />
     <Compile Include="GroupSend.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MsgEntity\BaseMenuEventMsg.cs" />
