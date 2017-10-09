@@ -223,7 +223,19 @@ namespace WxTest
         {
             var msg = (TextMsg)baseMsg;
             Utils.OutPrint(msg.Content);
-            msg.ResText("服务器收到你发送的消息了,你发送的内容是：\r\n" + msg.Content + "\r\n点击<a href=\"http://xulang.site\">这里</a>,我们有话跟你说哦");
+            if( msg.Content == "音乐" )
+            {
+                msg.ResText("回复音乐");
+            }
+            else if (msg.Content == "图片")
+            {
+                msg.ResPicture("h8WC_sN8lManF1ZHbetiuS0vu9t3dLCjsncLiiJ63qiCyo_RX4I862F0NvjI04aY");
+            }
+            else
+            {
+                msg.ResText("服务器收到你发送的消息了,你发送的内容是：\r\n" + msg.Content + "\r\n点击<a href=\"http://xulang.site\">这里</a>,我们有话跟你说哦");
+            }
+            
             //msg.ResText("服务器收到了你发送的消息了");
         
         }

@@ -75,6 +75,23 @@ namespace WxApi.MsgEntity
             return;
         }
 
+        public void ResMusic(ResMusic music)
+        {
+            var resxml = new StringBuilder();
+            resxml.AppendFormat("<xml><ToUserName><![CDATA[{0}]]></ToUserName>", FromUserName);
+            resxml.AppendFormat("<FromUserName><![CDATA[{0}]]></FromUserName>", ToUserName);
+            resxml.AppendFormat("<CreateTime>{0}</CreateTime>", Utils.ConvertDateTimeInt(DateTime.Now));
+            resxml.Append("<MsgType><![CDATA[music]]></MsgType>");
+            resxml.AppendFormat("<Music><MusicUrl><![CDATA[{0}]]></MusicUrl> ", music.MusicUrl);
+            resxml.AppendFormat("<Title><![CDATA[{0}]]></Title>", music.Title);
+            resxml.AppendFormat("<HQMusicUrl><![CDATA[{0}]]></HQMusicUrl>", music.HQMusicUrl);
+            resxml.AppendFormat("<ThumbMediaId><![CDATA[{0}]]></ThumbMediaId>", music.ThumbMediaId);
+            resxml.AppendFormat("<Description><![CDATA[{0}]]></Description></Music></xml>", music.Description);
+            HttpContext.Current.Response.Write(resxml);
+            return;
+        }
+
+
         public void ResArticles(List<ResArticle> artList)
         {
             var resxml = new StringBuilder();

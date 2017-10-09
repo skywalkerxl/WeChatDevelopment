@@ -6,6 +6,30 @@ using System.Threading.Tasks;
 
 namespace WxApi.ReceiveEntity
 {
+    public enum MaterialType
+    {
+        /// <summary>
+        /// 图片(image): 2MB,支持bmp/png/jpeg/jpg/gif 
+        /// </summary>
+        image,
+        /// <summary>
+        /// 语音(voice): 5MB,播放长度不超过60s,支持mp3/wma/wav/amr格式
+        /// </summary>
+        voice,
+        /// <summary>
+        /// 视频(video): 20MB,支持rm/rmvb/wmv/avi/mpg/mpeg/mp4格式
+        /// </summary>
+        video,
+        /// <summary>
+        /// 缩略图(thumb)， 64KB,支持jpg格式
+        /// </summary>
+        thumb,
+        /// <summary>
+        /// 图文
+        /// </summary>
+        news
+    }
+
     public class UpLoadInfo:ErrorEntity
     {
         /// <summary>

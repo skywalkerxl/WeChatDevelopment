@@ -8,6 +8,7 @@ using System.IO;
 using System.Web;
 using System.Xml.Linq;
 using WxApi.MsgEntity;
+using WxApi.ReceiveEntity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -181,10 +182,6 @@ namespace WxApi
             return JsonConvert.DeserializeObject<T>(retdata);
         }
 
-        public class FileStreamInfo : MemoryStream
-        {
-            public string FileName { get; set; }
-        }
 
         /// <summary>
         /// 用于下载FileStreamInfo类型的文件流
@@ -204,15 +201,17 @@ namespace WxApi
         /// <summary>
         /// 根据文件中的物理路径或网络路径下载文件
         /// </summary>
-        /// <param name="fileUrl"></param>
-        /// <param name="fileName"></param>
+        /// <param name="fileUrl">文件路径，可为网络资源，也可以为文件物理路径</param>
+        /// <param name="fileName">文件名</param>
         public static void DownLoadFile(string fileUrl, string fileName)
         {
             using (var client = new WebClient())
             {
+                // 将网络资源下载为二进制数据
                 var bytes = client.DownloadData(fileUrl);
                 using (var fsi = new FileStreamInfo())
                 {
+                    // 将二进制数据写入文件流
                     fsi.Write(bytes, 0, bytes.Length);
                     fsi.FileName = fileName;
                     DownLoadStream(fsi);
