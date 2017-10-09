@@ -131,6 +131,12 @@ namespace WxApi.ReceiveEntity
             };
             return Utils.PostResult<ErrorEntity>(obj, url);
         }
+
+        public static MaterialCount GetCount (string accessToken)
+        {
+            var url = string.Format("https://api.weixin.qq.com/cgi-bin/material/get_materialcount?access_token={0}", accessToken);
+            return Utils.GetResult<MaterialCount>(url);
+        }
     
     }
 
