@@ -191,6 +191,14 @@ namespace WxTest
                     });
                     #endregion
 
+                    #region 订阅事件处理绑定
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.SUBSCRIBE,
+                        Action = SubscribeEventHandler
+                    });
+                    #endregion
                     /***
                      * 
                      * 
@@ -313,7 +321,13 @@ namespace WxTest
         {
             // TODO
         }
+        #endregion
 
+        #region 订阅事件处理程序
+        private void SubscribeEventHandler(BaseMsg baseMsg)
+        {
+            // TODO
+        }
         #endregion
 
         #region 点击事件处理程序
