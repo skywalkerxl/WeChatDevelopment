@@ -207,8 +207,18 @@ namespace WxTest
                      * 
                      ***/
                     // TODO
+                    #region 模板消息事件处理
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.TEMPLATESENDJOBFINISH,
+                        Action = TEMPLATESENDJOBFINISHEventHandler
+                    });
+                    #endregion
+
+
                     #region 群发消息处理绑定
-                    
+
                     MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
                     {
                         MsgType = MsgType.EVENT,
@@ -382,6 +392,13 @@ namespace WxTest
         #region 群发消息处理程序
         private void GroupJobHandler(BaseMsg baseMsg)
         {
+            // TODO
+        }
+        #endregion
+
+        #region 模板消息事件处理程序
+        private void TEMPLATESENDJOBFINISHEventHandler(BaseMsg baseMsg)
+        { 
             // TODO
         }
         #endregion

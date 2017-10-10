@@ -46,5 +46,29 @@ namespace WxApi.MsgEntity
             var json = new { template_id_short = templateNo };
             return Utils.PostResult<TemplateID>(json, url);
         }
+
+        /// <summary>
+        /// 发送模板消息
+        /// </summary>
+        /// <param name="touser">要发送的用户的openid</param>
+        /// <param name="template_id">模板ID</param>
+        /// <param name="topcolor">消息卡片顶部的颜色</param>
+        /// <param name="dataKeys">模板字段列表</param>
+        /// <param name="accessToken">accessToken</param>
+        /// <param name="url">单击消息卡片跳转的地址。默认为空。如果为空，ios设备会跳转到空白页面；安卓则不跳转</param>
+        /// <returns></returns>
+        public static TemplateMsg Send(string touser, string template_id, string topcolor, Dictionary<string, TemplateKey> dataKeys, string accessToken, string url = "")
+        {
+            var turl = string.Format("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={0}", accessToken);
+            var json = new
+            {
+                touser = touser,
+                template_id = template_id,
+                url = url,
+                topcolor = topcolor,
+                data = dataKeys
+            };
+            return Utils.PostResult<TemplateMsg>(json, turl);
+        }
     }
 }

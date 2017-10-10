@@ -308,7 +308,6 @@ namespace WxApi
             }
         }
 
-
         public static int ConvertDateTimeInt(System.DateTime time)
         {
             var startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));
@@ -325,6 +324,7 @@ namespace WxApi
             System.Diagnostics.Debug.WriteLine(txt);
             System.Diagnostics.Debug.WriteLine("\n---------------------- Receive the message End ----------------------\n");   
         }
+        
     }
 
     public class FormEntity

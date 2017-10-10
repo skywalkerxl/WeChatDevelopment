@@ -67,6 +67,9 @@
     <Compile Include="MsgEntity\MsgHandlerEntity.cs" />
     <Compile Include="MsgEntity\PicMenuEventMsg.cs" />
     <Compile Include="MsgEntity\ScanMenuEventMsg.cs" />
+    <Compile Include="MsgEntity\TemplateID.cs" />
+    <Compile Include="MsgEntity\TemplateKey.cs" />
+    <Compile Include="MsgEntity\TemplateMsg.cs" />
     <Compile Include="MsgEntity\TemplateNotice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiveEntity\AccessToken.cs" />
