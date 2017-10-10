@@ -67,13 +67,16 @@
     <Compile Include="MsgEntity\MsgHandlerEntity.cs" />
     <Compile Include="MsgEntity\PicMenuEventMsg.cs" />
     <Compile Include="MsgEntity\ScanMenuEventMsg.cs" />
+    <Compile Include="MsgEntity\TemplateNotice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiveEntity\AccessToken.cs" />
     <Compile Include="ReceiveEntity\CustomerServices.cs" />
     <Compile Include="ReceiveEntity\ErrorEntity.cs" />
+    <Compile Include="ReceiveEntity\FileStreamInfo.cs" />
     <Compile Include="ReceiveEntity\GroupSendEntity.cs" />
     <Compile Include="ReceiveEntity\GroupUpLoadEntity.cs" />
     <Compile Include="ReceiveEntity\IpEntity.cs" />
+    <Compile Include="ReceiveEntity\MaterialCount.cs" />
     <Compile Include="ReceiveEntity\MaterialLib.cs" />
     <Compile Include="ReceiveEntity\MaterialList.cs" />
     <Compile Include="ReceiveEntity\UpLoadInfo.cs" />
@@ -86,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeInfo.txt" />
+    <Content Include="IndustryCode.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Code.resx">

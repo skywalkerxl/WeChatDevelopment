@@ -58,7 +58,7 @@ namespace WxApi.ReceiveEntity
         /// <param name="videotitle"永久视频素材标题></param>
         /// <param name="videointroduction">永久视频素材描述</param>
         /// <returns></returns>
-        public static UpLoadInfo Add(string filepath, string accessToken, MaterialType mediaType, bool IsTemp = true, string videotitle = "", String videointroduction)
+        public static UpLoadInfo Add(string filepath, string accessToken, MaterialType mediaType, bool IsTemp = true, string videotitle = "", String videointroduction = "")
         {
             try
             {
