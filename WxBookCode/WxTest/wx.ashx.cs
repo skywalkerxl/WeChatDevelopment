@@ -336,7 +336,8 @@ namespace WxTest
         #region 订阅事件处理程序
         private void SubscribeEventHandler(BaseMsg baseMsg)
         {
-            // TODO
+            var msg = (TextMsg)baseMsg;
+            msg.ResText("欢迎关注安工大二手交易公众号~");
         }
         #endregion
 
