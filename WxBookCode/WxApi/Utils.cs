@@ -324,6 +324,21 @@ namespace WxApi
             System.Diagnostics.Debug.WriteLine(txt);
             System.Diagnostics.Debug.WriteLine("\n---------------------- Receive the message End ----------------------\n");   
         }
+        /// <summary>
+        /// 将字符串进行url编码
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string UrlEncode(string str)
+        {
+            if(string.IsNullOrEmpty(str))
+            {
+                return "";
+            }
+            str = str.Replace("'", "");
+            return HttpContext.Current.Server.UrlEncode(str);
+
+        }
         
     }
 
