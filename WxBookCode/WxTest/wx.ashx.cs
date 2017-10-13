@@ -181,8 +181,17 @@ namespace WxTest
                     });
                     #endregion
 
+                    #region 点击事件处理程序
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                        {
+                            MsgType = MsgType.EVENT,
+                            EventType = EventType.CLICK,
+                            Action = ClickEventHandler
+                        });
+                    #endregion
+
                     #region 图片事件处理绑定
-                    
+
                     MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
                     {
                         MsgType = MsgType.EVENT,
@@ -207,7 +216,71 @@ namespace WxTest
                      * 
                      ***/
                     // TODO
-                    #region 模板消息事件处理
+                    #region 获取地理位置信息事件处理绑定
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.LOCATION,
+                        Action = LocationEventHandler
+                    });
+                    #endregion
+
+                    #region 浏览事件处理程序绑定
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.VIEW,
+                        Action = ViewEventHandler
+                    });
+                    #endregion
+
+                    #region 扫码推送事件处理程序绑定
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.SCANCODE_PUSH,
+                        Action = ScanCodePushEventHandler
+                    });
+                    #endregion
+
+                    #region 扫码等待事件处理程序绑定
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.SCANCODE_WAITMSG,
+                        Action = ScanCOdeWatingEventHandler
+                    });
+                    #endregion
+
+                    #region 系统照相事件处理程序绑定
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.PIC_SYSPHOTO,
+                        Action = PicSysphotoEventHandler
+                    });
+                    #endregion
+
+                    #region 系统照相或相册事件处理程序绑定
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.PIC_PHOTO_OR_ALBUM,
+                        Action = PicPhotoOrAlbumEventHandler
+                    });
+                    #endregion
+
+                    #region 弹出地理位置选择器事件处理绑定
+                    MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
+                    {
+                        MsgType = MsgType.EVENT,
+                        EventType = EventType.LOCATION_SELECT,
+                        Action = LocationSelectEventHandler
+                    });
+                    #endregion
+
+
+                    #region 模板消息事件处理绑定
                     MsgHandlerEntity.MsgHandlerEntities.Add(new MsgHandlerEntity
                     {
                         MsgType = MsgType.EVENT,
@@ -255,7 +328,6 @@ namespace WxTest
             }
             
             //msg.ResText("服务器收到了你发送的消息了");
-        
         }
         #endregion
 

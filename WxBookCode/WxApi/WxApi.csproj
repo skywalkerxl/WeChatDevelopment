@@ -90,9 +90,15 @@
     <Compile Include="SendEntity\ResArticle.cs" />
     <Compile Include="SendEntity\ResMusic.cs" />
     <Compile Include="SendEntity\ResVideo.cs" />
+    <Compile Include="UserManager\AuthType.cs" />
+    <Compile Include="UserManager\BaseUser.cs" />
+    <Compile Include="UserManager\OAuth.cs" />
+    <Compile Include="UserManager\OAuthToken.cs" />
     <Compile Include="UserManager\QueryGroupEntity.cs" />
     <Compile Include="UserManager\UserGroups.cs" />
     <Compile Include="UserManager\UserGroupEntity.cs" />
+    <Compile Include="UserManager\UserInfo.cs" />
+    <Compile Include="UserManager\UserListEntity.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,7 @@ namespace WxTest
             if(tempat != null)
             {
                 return tempat.Token.access_token;
-            }
+            }                                                                
             var newAT = BaseServices.GetAccessToken(appid, appSerect);
             if(!string.IsNullOrEmpty(newAT.access_token))
             {

@@ -83,7 +83,7 @@ namespace WxApi.UserManager
             var url = string.Format("https://api.weixin.qq.com/cgi-bin/groups/members/batchupdate?access_token={0}", accessToken);
             var obj = new
             {
-                openid_list = openid_list,
+                openid_list = openid_list, 
                 to_groupid = to_groupid
             };
             return Utils.PostResult<ErrorEntity>(obj, url);
