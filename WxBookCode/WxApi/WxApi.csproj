@@ -90,6 +90,7 @@
     <Compile Include="SendEntity\ResArticle.cs" />
     <Compile Include="SendEntity\ResMusic.cs" />
     <Compile Include="SendEntity\ResVideo.cs" />
+    <Compile Include="SendEntity\ResVoice.cs" />
     <Compile Include="UserManager\AuthType.cs" />
     <Compile Include="UserManager\BaseUser.cs" />
     <Compile Include="UserManager\OAuth.cs" />

@@ -20,25 +20,25 @@ namespace WxTest
                 color = "#cc0000",
             });
             dickKeys.Add("orderFrom", new TemplateKey
-                {
-                    value = "微信端",
-                    color = "#cc0000"
-                });
+            {
+                value = "微信端",
+                color = "#cc0000"
+            });
             dickKeys.Add("customerInfo", new TemplateKey
-                {
-                    value = "张三 电话:110",
-                    color = "#cc0000"
-                });
+            {
+                value = "张三 电话:110",
+                color = "#cc0000"
+            });
             dickKeys.Add("orderInfo", new TemplateKey
-                {
-                    value = "卡迪拉克",
-                    color = "#cc0000"
-                });
+            {
+                value = "卡迪拉克",
+                color = "#cc0000"
+            });
             dickKeys.Add("remark", new TemplateKey
-                {
-                    value = "请及时确认",
-                    color = "#cc0000"
-                });
+            {
+                value = "请及时确认",
+                color = "#cc0000"
+            });
             var d = TemplateNotice.Send("o5F3X0iVqFiqV8gNyQMapZFTLPGc","EUfxyqBkvVyOPfD3_Tts8qi2Imsos_1oC2gD_hJ8nT0", "#cccccc", dickKeys, accessToken);
             if(d.ErrCode == 0)
             {

@@ -74,6 +74,21 @@ namespace WxApi.MsgEntity
             HttpContext.Current.Response.Write(resxml);
             return;
         }
+        /// <summary>
+        /// 回复语音消息
+        /// </summary>
+        /// <param name="voice"></param>
+        public void ResVoice(ResVoice voice)
+        {
+            var resxml = new StringBuilder();
+            resxml.AppendFormat("<xml><ToUserName><![CDATA[{0}]]></ToUserName>", FromUserName);
+            resxml.AppendFormat("<FromUserName><![CDATA[{0}]]></FromUserName>", ToUserName);
+            resxml.AppendFormat("<CreateTime>{0}</CreateTime>", Utils.ConvertDateTimeInt(DateTime.Now));
+            resxml.Append("<MsgType><![CDATA[voice]]></MsgType>");
+            resxml.AppendFormat("<Voice><MediaId><![CDATA[{0}]]></MediaId></Voice></xml>", voice.MediaId);
+            HttpContext.Current.Response.Write(resxml);
+            return;
+        }
 
         public void ResMusic(ResMusic music)
         {
@@ -213,7 +228,7 @@ namespace WxApi.MsgEntity
         MASSSENDJOBFINISH
     }
 
-    public　class TextMsg:BaseMsg
+    public　class TextMsg : BaseMsg
     {
         /// <summary>
         /// 消息内容

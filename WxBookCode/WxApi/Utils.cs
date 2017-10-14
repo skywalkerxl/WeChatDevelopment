@@ -359,7 +359,6 @@ namespace WxApi
         /// </summary>
         public bool IsFile { get; set; }
 
-
     }
     
     public enum MenuType

@@ -25,8 +25,6 @@ namespace WxTest
             }*/
             // var url = context.Request.RawUrl;
 
-            
-            
             if (context.Request.HttpMethod=="GET")
             {   
                 BaseServices.ValidUrl("skywalkerxl");
@@ -313,10 +311,39 @@ namespace WxTest
         private void TextHandler(BaseMsg baseMsg)
         {
             var msg = (TextMsg)baseMsg;
+            
             Utils.OutPrint(msg.Content);
-            if( msg.Content == "音乐" )
+
+            switch(msg.Content)
             {
-                msg.ResText("回复音乐");
+                case "音乐": msg.ResText("回复音乐"); break;
+                case "语音": msg.ResVoice(new ResVoice
+                    {
+                        Title = "title",
+                        MediaId = "KPd2y1s8CdSF0_0V4KNpPKVybbV5UMvJXHLgqOo-ujNkYLvC6fGImY3Y1J0rWt5d",
+                        Desription = "description"
+                    }); 
+                    break;
+                case "图片": msg.ResPicture("L95vVzYKNPG5wXbZRsO2446tvH9XdgOxmW9u2cnGwzTo-dZB6lQuhfE9FR8fQlmr"); break;
+                case "视频": msg.ResText("这是一个视频"); break;
+                case "一条图文": 
+                    List<ResArticle> acticlesSingle = new List<ResArticle>();
+                    acticlesSingle.Add(new ResArticle { Title = "图文1的标题", Description = "图文1的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    msg.ResArticles(acticlesSingle); 
+                    break;
+                case "多条图文":
+                    List<ResArticle> acticlesMulti = new List<ResArticle>();
+                    acticlesMulti.Add(new ResArticle { Title = "图文1的标题", Description = "图文1的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "图文2的标题", Description = "图文2的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "图文2的标题", Description = "图文2的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "图文2的标题", Description = "图文2的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    msg.ResArticles(acticlesMulti);
+                    break;
+                default: msg.ResText("服务器收到你发送的消息了,你发送的内容是：\r\n" + msg.Content); break;
+            }
+            /*if( msg.Content == "音乐" )
+            {
+                //msg.ResMusic()
             }
             else if (msg.Content == "图片")
             {
@@ -325,7 +352,7 @@ namespace WxTest
             else
             {
                 msg.ResText("服务器收到你发送的消息了,你发送的内容是：\r\n" + msg.Content + "\r\n点击<a href=\"http://xulang.site\">这里</a>,我们有话跟你说哦");
-            }
+            }*/
             
             //msg.ResText("服务器收到了你发送的消息了");
         }
