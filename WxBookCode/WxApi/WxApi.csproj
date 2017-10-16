@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="EnterParam.cs" />
     <Compile Include="GroupSend.cs" />
+    <Compile Include="JsApi.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MsgEntity\BaseMenuEventMsg.cs" />
     <Compile Include="MsgEntity\BaseMsg.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="ReceiveEntity\GroupSendEntity.cs" />
     <Compile Include="ReceiveEntity\GroupUpLoadEntity.cs" />
     <Compile Include="ReceiveEntity\IpEntity.cs" />
+    <Compile Include="ReceiveEntity\JsApiTicket.cs" />
     <Compile Include="ReceiveEntity\MaterialCount.cs" />
     <Compile Include="ReceiveEntity\MaterialLib.cs" />
     <Compile Include="ReceiveEntity\MaterialList.cs" />

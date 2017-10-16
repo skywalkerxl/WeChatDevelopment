@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Handler\UpLoadImageHandler.ashx" />
+    <Content Include="Handler\CreateMenuHandler.ashx" />
+    <Content Include="WxJs.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,6 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessTokenBox.cs" />
+    <Compile Include="Handler\CreateMenuHandler.ashx.cs">
+      <DependentUpon>CreateMenuHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Handler\UpLoadImageHandler.ashx.cs">
       <DependentUpon>UpLoadImageHandler.ashx</DependentUpon>
     </Compile>
@@ -88,6 +93,13 @@
     </Compile>
     <Compile Include="wx.ashx.cs">
       <DependentUpon>wx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WxJs.aspx.cs">
+      <DependentUpon>WxJs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WxJs.aspx.designer.cs">
+      <DependentUpon>WxJs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -339,6 +339,17 @@ namespace WxApi
             return HttpContext.Current.Server.UrlEncode(str);
 
         }
+        /// <summary>
+        /// 该方法的功能是获取当前请求的完整主机头
+        /// </summary>
+        /// <returns></returns>
+        public static string GetCurrentFullHost()
+        {
+            HttpRequest request = System.Web.HttpContext.Current.Request;
+            if (!request.Url.IsDefaultPort)
+                return string.Format("{0}:{1}", request.Url.Host, request.Url.Port.ToString());
+            return request.Url.Host;
+        }
         
     }
 
