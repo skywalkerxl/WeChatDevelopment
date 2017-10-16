@@ -28,86 +28,6 @@ namespace WxTest
             if (context.Request.HttpMethod=="GET")
             {   
                 BaseServices.ValidUrl("skywalkerxl");
-                
-                #region 创建菜单按钮
-                string appid = "wxf50808b364418ffb";
-                string appSerect = "bfaf8363dc64787091b3bbb7740dcf44";
-                var accessToken = AccessTokenBox.GetTokenValue(appid, appSerect);
-                var child1 = new List<BaseMenu>();
-                var child2 = new List<BaseMenu>();
-                var child3 = new List<BaseMenu>();
-                var basebtn = new List<BaseMenu>();
-
-                child1.Add(new BaseMenu
-                {
-                    key = "我是click按钮",
-                    name = "Click按钮",
-                    type = MenuType.click
-                });
-                child1.Add(new BaseMenu
-                {
-                    key = "我是选择地理位置按钮",
-                    name = "选择地理位置",
-                    type = MenuType.location_select
-                });
-                child1.Add(new BaseMenu
-                {
-                    url = "http://www.baidu.com",
-                    name = "跳转链接",
-                    type = MenuType.view
-                });
-
-                child2.Add(new BaseMenu
-                {
-                    key = "我是扫码事件按钮",
-                    name = "扫码推事件",
-                    type = MenuType.scancode_push
-                });
-                child2.Add(new BaseMenu
-                {
-                    key = "我是扫码推事件按钮且弹出消息接收中",
-                    name = "扫码等待",
-                    type = MenuType.scancode_waitmsg
-                });
-
-                child3.Add(new BaseMenu
-                {
-                    key = "我是拍照或相册按钮",
-                    name = "拍照或相册",
-                    type = MenuType.pic_photo_or_album
-                });
-
-                child3.Add(new BaseMenu
-                {
-                    key = "我是系统拍照",
-                    name = "系统拍照",
-                    type = MenuType.pic_sysphoto
-                });
-                child3.Add(new BaseMenu
-                {
-                    key = "我是弹出微信相册按钮",
-                    name = "微信相册",
-                    type = MenuType.pic_weixin
-                });
-
-                basebtn.Add(new BaseMenu
-                {
-                    name = "常用菜单",
-                    sub_button = child1
-                });
-                basebtn.Add(new BaseMenu
-                {
-                    name = "扫码",
-                    sub_button = child2
-                });
-                basebtn.Add(new BaseMenu
-                {
-                    name = "发图",
-                    sub_button = child3
-                });
-
-                var ret = WxApi.Menu.Create(new MenuEntity { button = basebtn }, accessToken);
-                #endregion
             }
 
             else
@@ -337,6 +257,11 @@ namespace WxTest
                     acticlesMulti.Add(new ResArticle { Title = "图文2的标题", Description = "图文2的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
                     acticlesMulti.Add(new ResArticle { Title = "图文2的标题", Description = "图文2的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
                     acticlesMulti.Add(new ResArticle { Title = "图文2的标题", Description = "图文2的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "图文1的标题", Description = "图文1的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "图文2的标题", Description = "图文2的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "图文2的标题", Description = "图文2的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "图文2的标题", Description = "图文2的描述", Url = "", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    
                     msg.ResArticles(acticlesMulti);
                     break;
                 default: msg.ResText("服务器收到你发送的消息了,你发送的内容是：\r\n" + msg.Content); break;
