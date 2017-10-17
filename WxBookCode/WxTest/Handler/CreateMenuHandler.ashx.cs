@@ -40,7 +40,7 @@ namespace WxTest.Handler
             });
             child1.Add(new BaseMenu
             {
-                url = "http://www.baidu.com",
+                url = "http://skywalkerxl.free.ngrok.cc/WxJs.aspx",
                 name = "跳转链接",
                 type = MenuType.view
             });
@@ -95,6 +95,7 @@ namespace WxTest.Handler
             });
 
             var ret = WxApi.Menu.Create(new MenuEntity { button = basebtn }, accessToken);
+            context.Response.Write("状态码：" + ret.ErrCode + "状态描述：" + ret.ErrDescription);
             #endregion
         }
 

@@ -360,7 +360,7 @@ namespace WxTest
         #region 订阅事件处理程序
         private void SubscribeEventHandler(BaseMsg baseMsg)
         {
-            var msg = (TextMsg)baseMsg;
+            var msg = (SubEventMsg)baseMsg;
             msg.ResText("欢迎关注安工大二手交易公众号~");
         }
         #endregion
