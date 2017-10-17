@@ -5,9 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,userscalable=no"/>
     <title>JS-SDK测试页面</title>
+    <script>
+        (function () {
+            var html = document.documentElement;
+            var hWidth = html.getBoundingClientRect().width;
+            html.style.fontSize = hWidth / 15 + "px";
+        })();
+    </script>
     <script src="https://cdn.bootcss.com/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    
     <script type="text/javascript">
         wx.config({
             debug: false, // 开启调试模式，调试的所有api的返回值会在客户端alert出来
@@ -20,7 +29,8 @@
                 'onMenuShareTimeline',
                 'onMenuShareAppMessage',
                 'onMenuShareWeibo',
-                'onMenuShareQQ'
+                'onMenuShareQQ',
+                'chooseImage'
             ] // 必填，需要使用的JS接口列表，所有JS接口列表见开发文档
         });
 
@@ -29,7 +39,8 @@
                 wx.checkJsApi({
                     jsApiList: [
                         'getNetworkType',
-                        'previewImage'
+                        'previewImage',
+                        'chooseImage'
                     ],
                     success: function (res) {
                         alert(JSON.stringify(res));
@@ -37,6 +48,15 @@
                 });
             });
 
+            $('#UpLoadImg').click(function () {
+                wx.chooseImage({
+                    success: function (res) {
+                        alert(JSON.stringify(res));
+                        var localIds = res.localIds;
+                    }
+                });
+            });
+            
             wx.onMenuShareTimeline({
                 title: '我要分享到朋友圈', // 分享标题
                 link: 'http://www.baidu.com', // 分享链接
@@ -86,6 +106,8 @@
     <form id="form1" runat="server">
     <div>
         <input type="button" value="checkJsApi" id="checkJsApi"/>
+        <input type="button" value="上传图片" id="UpLoadImg"/>
+        <input type="button" value="下载图片" id="DownLoadImg"/>
     </div>
     </form>
 </body>
