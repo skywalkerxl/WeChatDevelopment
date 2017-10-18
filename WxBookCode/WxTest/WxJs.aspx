@@ -48,7 +48,9 @@
                 });
             });
 
+
             $('#UpLoadImg').click(function () {
+                // 拍照或从手机相册选取图片
                 wx.chooseImage({
                     success: function (res) {
                         alert(JSON.stringify(res));
@@ -97,6 +99,20 @@
                     alert('取消分享了');
                     // 用户取消分享后执行的回调函数
                 }
+            });
+            // 下载图片接口
+            wx.downloadImage({
+                serverId: '',
+                isShowProgressTips: 1,
+                success: function (res) {
+                    var localId = res.localId;
+                }
+            });
+
+            // 预览图片接口
+            wx.previewImage({
+                current: '', // 当前显示的图片链接
+                urls: [] // 需要预览的图片链接列表
             })
         });
 
