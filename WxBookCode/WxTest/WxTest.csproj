@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Handler\UpLoadImageHandler.ashx" />
     <Content Include="Handler\CreateMenuHandler.ashx" />
+    <Content Include="UI\Library\weui.css" />
     <Content Include="WxJs.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -108,9 +109,7 @@
       <Name>WxApi</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\Library\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
