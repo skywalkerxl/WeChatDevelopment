@@ -60,6 +60,8 @@
     <Content Include="Handler\UpLoadImageHandler.ashx" />
     <Content Include="Handler\CreateMenuHandler.ashx" />
     <Content Include="UI\Library\weui.css" />
+    <Content Include="UI\Seller\UnusedComparison.html" />
+    <Content Include="UI\Seller\UnusedEntering.html" />
     <Content Include="WxJs.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -109,7 +111,10 @@
       <Name>WxApi</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UI\MoreInfo\" />
+    <Folder Include="UI\Selection\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

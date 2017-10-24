@@ -100,6 +100,7 @@
                     // 用户取消分享后执行的回调函数
                 }
             });
+
             // 下载图片接口
             wx.downloadImage({
                 serverId: '',
