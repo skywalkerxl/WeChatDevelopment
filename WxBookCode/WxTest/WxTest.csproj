@@ -59,10 +59,16 @@
   <ItemGroup>
     <Content Include="Handler\UpLoadImageHandler.ashx" />
     <Content Include="Handler\CreateMenuHandler.ashx" />
-    <Content Include="UI\Library\weui.css" />
-    <Content Include="UI\Seller\UnusedComparison.html" />
-    <Content Include="UI\Seller\UnusedEntering.html" />
+    <Content Include="UI\static\Library\weui.css" />
+    <Content Include="UI\static\web\Seller\css\UnusedComparison.css" />
+    <Content Include="UI\static\web\Seller\css\UnusedEntering.css" />
+    <Content Include="UI\static\web\Seller\js\UnusedComparison.js" />
+    <Content Include="UI\static\web\Seller\js\UnusedEntering.js" />
+    <Content Include="UI\templates\Seller\UnusedComparison.html" />
+    <Content Include="UI\templates\Seller\UnusedEntering.html" />
     <Content Include="WxJs.aspx" />
+    <Content Include="UI\static\web\Seller\css\UnusedComparison.less" />
+    <Content Include="UI\static\web\Seller\css\UnusedEntering.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -70,7 +76,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="TemplateTest.aspx" />
-    <Content Include="UI\Default.html" />
+    <Content Include="UI\templates\Default.html" />
     <Content Include="wx.ashx" />
   </ItemGroup>
   <ItemGroup>
@@ -112,8 +118,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UI\MoreInfo\" />
-    <Folder Include="UI\Selection\" />
+    <Folder Include="UI\static\web\MoreInfo\" />
+    <Folder Include="UI\static\web\Selection\" />
+    <Folder Include="UI\templates\MoreInfo\" />
+    <Folder Include="UI\templates\Selection\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

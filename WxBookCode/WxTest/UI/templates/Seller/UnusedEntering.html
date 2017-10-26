@@ -8,10 +8,30 @@
     <!-- 引入 样式 -->
     <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <link href="../../static/web/Seller/css/UnusedEntering.css" rel="stylesheet" />
+    <script>
+        (function () {
+            var html = document.documentElement;
+            var hwidth = html.getBoundingClientRect().width;
+            html.style.fontSize = hwidth / 15 + "px";
+        })();
+    </script>
 </head>
 <body>
-    <header>在这里输入您想要出售的闲置商品信息</header>
+    <header class="header">在这里输入您想要出售的闲置商品信息</header>
 
+
+    <div class="weui-cells weui-cells-form">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">名称</label>
+            </div>
+            <div class="weui-cell__hd">
+                <input class="weui-input" placeholder="请输入名称"/>
+            </div>
+        </div>
+    </div>
+    <!-- 商品描述模块  -->
     <div class="weui-cells__title">商品描述</div>
     <div class="weui-cell">
         <div class="weui-cell__bd">
@@ -21,14 +41,13 @@
             </div>
         </div>
     </div>
-    
-
+    <!-- 表单模块 -->
     <div class="weui-cells__title">表单</div>
     <div class="weui-cells weui-cells-form">
         <div class="weui-cell">
             <div class="weui-cell__hd">
                 <label class="weui-label">QQ</label>
-            </div>
+            </div> 
             <div class="weui-cell__hd">
                 <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入您的qq号"/>
             </div>
@@ -38,7 +57,7 @@
                 <label class="weui-label">手机号</label>
             </div>
             <div class="weui-cell__hd">
-                <input class="weui-input" type="tel" pattern="[0-9]*" placeholder="请输入您的qq号" />
+                <input class="weui-input" type="tel" pattern="[0-9]*" placeholder="请输入您的手机号" />
             </div>
         </div>
         <div class="weui-cell">
@@ -46,7 +65,7 @@
                 <label class="weui-label">其它</label>
             </div>
             <div class="weui-cell__hd">
-                <input class="weui-input" pattern="[0-9]*" placeholder="请输入您的qq号" />
+                <input class="weui-input" pattern="[0-9]*" placeholder="请输入您的其它联系方式" />
             </div>
         </div>
     </div>
