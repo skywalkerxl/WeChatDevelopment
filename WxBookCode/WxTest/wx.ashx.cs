@@ -264,6 +264,9 @@ namespace WxTest
                     
                     msg.ResArticles(acticlesMulti);
                     break;
+                case "李秀茹":
+                    msg.ResText("阳光，空气，和水");
+                    break;
                 default: msg.ResText("服务器收到你发送的消息了,你发送的内容是：\r\n" + msg.Content); break;
             }
             /*if( msg.Content == "音乐" )

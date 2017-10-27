@@ -1,3 +1,75 @@
-﻿body {
-    margin:0; padding:0;
+﻿@r: 50rem;
+@html-bg: #D2D7D3;
+@html-normal-bg: #fff;
+@class-recommend-bg: #8DB255;
+@class-recommend-color: #fff;
+@search-content-bg: #fff;
+
+html, body {
+    margin: 0; padding: 0;
+    background: @html-normal-bg;
+}
+li {
+    list-style: none;
+}
+.vhidden {
+    visibility: hidden;
+}
+.dhidden {
+    display: none;
+}
+.class-recommend {
+    width: 100%; height: 150/@r;
+    margin: 15/@r 20/@r;
+    .recommend-list {
+        display:inline-block; 
+        height: 70/@r; padding:0 25/@r; margin-bottom: 20/@r; margin-right:18/@r;
+        line-height: 70/@r; font-size: 25/@r; color:@class-recommend-color;
+        background: @class-recommend-bg;  border-radius: 35/@r;
+    }
+}
+.search-content-wrap {
+    width: 100%;
+
+    .search-content {
+        padding: 30/@r; 
+
+        li {
+            width: 100%; height: 200/@r; margin-bottom: 40/@r;
+            background: @search-content-bg; border-radius: 15/@r;
+            overflow:hidden; box-shadow: 0 0 10px 0 #999;
+
+            .content-title {
+                position: relative;
+                width: 100%; height: 80/@r;
+                line-height: 80/@r; text-align:left;
+                .main-title {
+                    margin-left: 40/@r;
+                    color: #4B77BE;
+                }
+                .goods-class {
+                    margin-left: 50/@r;
+                    color: #5B8930;
+                }
+                .goods-money {
+                    position:absolute;
+                    right: 50/@r;
+                    color: #FFB61E;
+                }
+                
+            }
+            .content-desc {
+                width: 100%; height: 120/@r; padding:10/@r; padding-top:0; padding-left: 40/@r;
+                overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+                box-sizing: border-box; 
+                span {
+                    line-height: 50/@r; color: #000;
+                    
+                }
+            }
+        }
+        :last-child {
+            margin-bottom:0;
+        }
+    }
 }

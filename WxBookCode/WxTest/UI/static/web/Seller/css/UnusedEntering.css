@@ -8,8 +8,9 @@ body {
   text-align: center;
   line-height: 2.4rem;
   font-size: 0.8rem;
-  color: #fff;
-  background: #19b5fe;
+  color: #000000;
+  background: #fbfbfb;
+  border-bottom: 1px solid #ccc;
 }
 .sub-title {
   background: #bdc3c7;

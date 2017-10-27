@@ -5,8 +5,154 @@
     <meta http-equiv="content-type" content="IE-edge"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,"/>
     <title>闲置对比</title>
+    <!-- 引入 样式 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../../static/web/Seller/css/UnusedComparison.css" />
+    <script>
+        (function () {
+            var html = document.documentElement;
+            var hWidth = html.getBoundingClientRect().width;
+            html.style.fontSize = hWidth / 15 + "px"; 
+        })();
+    </script>
 </head>
 <body>
+    <!-- 搜索栏 -->
+    <div class="weui-search-bar" id="searchBar">
+        <form class="weui-search-bar__form">
+            <div class="weui-search-bar__box">
+                <i class="weui-icon-search"></i>
+                <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+                <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+            </div>
+            <label class="weui-search-bar__label" id="searchText">
+                <i class="weui-icon-search"></i>
+                <span>搜索</span>
+            </label>
+        </form>
+        <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+    </div>
+    <!-- 类别推荐 自行车 电瓶车 水瓶 旧书籍 椅子 文具 收纳盒 装饰物 键盘 -->
+    <ul class="class-recommend " id="class-recommend">
+        <li class="recommend-list">自行车</li>
+        <li class="recommend-list">电瓶车</li>
+        <li class="recommend-list">水瓶</li>
+        <li class="recommend-list">旧书籍</li>
+        <li class="recommend-list">椅子</li>
+        <li class="recommend-list">文具</li>
+        <li class="recommend-list">收纳盒</li>
+        <li class="recommend-list">装饰物</li>
+        <li class="recommend-list">键盘</li>
+    </ul>
 
+    <div class="search-content-wrap dhidden" id="search-content-wrap">
+        <ul class="search-content">
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+            <li>
+                <div class="content-title">
+                    <span class="main-title">罗技k310</span>
+                    <span class="goods-class">键盘</span>
+                    <span class="goods-money">100元</span>
+                </div>
+                <div class="content-desc">
+                    <span>9成新，键盘可以水洗，因为买了新的机械键盘，这个键盘不用了，需要的联系13155363398</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 引入 js文件 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+    <script src="../../static/web/Seller/js/UnusedComparison.js"></script>
 </body>
 </html>

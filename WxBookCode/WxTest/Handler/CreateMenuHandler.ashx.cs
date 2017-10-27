@@ -28,6 +28,81 @@ namespace WxTest.Handler
 
             child1.Add(new BaseMenu
             {
+                url = "http://skywalkerxl.free.ngrok.cc/UI/templates/Seller/UnusedComparison.html",
+                name = "闲置对比",
+                type = MenuType.view
+            });
+            child1.Add(new BaseMenu
+            {
+                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/Seller/UnusedEntering.html",
+                name = "闲置录入",
+                type = MenuType.view
+            });
+
+            child2.Add(new BaseMenu
+            {
+                key = "SelectionClick",
+                name = "精选好物",
+                type = MenuType.click
+            });
+            child2.Add(new BaseMenu
+            {
+                url = "",
+                name = "搜你所想",
+                type = MenuType.view
+            });
+
+            child3.Add(new BaseMenu
+            {
+                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/MyInfomation.html",
+                name = "我的信息",
+                type = MenuType.view
+            });
+
+            child3.Add(new BaseMenu
+            {
+                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/RecentActivity.html",
+                name = "最近活动",
+                type = MenuType.view
+            });
+            child3.Add(new BaseMenu
+            {
+                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/UseGuide.html",
+                name = "使用指南",
+                type = MenuType.view
+            });
+            child3.Add(new BaseMenu
+            {
+                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/FeedBack.html",
+                name = "意见反馈",
+                type = MenuType.view
+            });
+            child3.Add(new BaseMenu
+            {
+                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/AboutUs.html",
+                name = "关于我们",
+                type = MenuType.view
+            });
+
+            basebtn.Add(new BaseMenu
+            {
+                name = "出售闲置",
+                sub_button = child1
+            });
+            basebtn.Add(new BaseMenu
+            {
+                name = "精选好物",
+                sub_button = child2
+            });
+            basebtn.Add(new BaseMenu
+            {
+                name = "查看更多",
+                sub_button = child3
+            });
+
+            /*
+             child1.Add(new BaseMenu
+            {
                 key = "我是click按钮",
                 name = "Click按钮",
                 type = MenuType.click
@@ -93,6 +168,9 @@ namespace WxTest.Handler
                 name = "发图",
                 sub_button = child3
             });
+             
+             */
+
 
             var ret = WxApi.Menu.Create(new MenuEntity { button = basebtn }, accessToken);
             context.Response.Write("状态码：" + ret.ErrCode + "状态描述：" + ret.ErrDescription);
