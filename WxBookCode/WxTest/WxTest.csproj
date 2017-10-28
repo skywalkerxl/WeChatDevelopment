@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Handler\UpLoadImageHandler.ashx" />
     <Content Include="Handler\CreateMenuHandler.ashx" />
+    <Content Include="SearchYouWant.html" />
     <Content Include="UI\static\Library\AliIcon\iconfont.css" />
     <Content Include="UI\static\Library\img\UseGuide.png" />
     <Content Include="UI\static\Library\weui.css" />
@@ -70,18 +71,19 @@
     <Content Include="UI\static\web\Seller\css\UnusedEntering.css" />
     <Content Include="UI\static\web\Seller\js\UnusedComparison.js" />
     <Content Include="UI\static\web\Seller\js\UnusedEntering.js" />
-    <Content Include="UI\templates\MoreInfo\AboutUs.html" />
-    <Content Include="UI\templates\MoreInfo\FeedBack.html" />
-    <Content Include="UI\templates\MoreInfo\MyInfomation.html" />
-    <Content Include="UI\templates\MoreInfo\RecentActivity.html" />
-    <Content Include="UI\templates\MoreInfo\UseGuide.html" />
-    <Content Include="UI\templates\Seller\UnusedComparison.html" />
-    <Content Include="UI\templates\Seller\UnusedEntering.html" />
+    <Content Include="AboutUs.html" />
+    <Content Include="FeedBack.html" />
+    <Content Include="MyInfomation.html" />
+    <Content Include="RecentActivity.html" />
+    <Content Include="UseGuide.html" />
+    <Content Include="UnusedComparison.html" />
+    <Content Include="UnusedEntering.html" />
     <Content Include="WxJs.aspx" />
     <Content Include="UI\static\web\Seller\css\UnusedComparison.less" />
     <Content Include="UI\static\web\Seller\css\UnusedEntering.less" />
     <Content Include="UI\static\web\MoreInfo\AboutUs\AboutUs.less" />
     <Content Include="UI\static\web\MoreInfo\UseGuide\UseGuide.less" />
+    <Content Include="UI\static\web\public\variable.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -131,11 +133,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="MoreInfo\" />
+    <Folder Include="Selection\" />
+    <Folder Include="Seller\" />
     <Folder Include="UI\static\web\MoreInfo\FeedBack\" />
     <Folder Include="UI\static\web\MoreInfo\MyInfomation\" />
     <Folder Include="UI\static\web\MoreInfo\RecentActivity\" />
     <Folder Include="UI\static\web\Selection\" />
-    <Folder Include="UI\templates\Selection\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

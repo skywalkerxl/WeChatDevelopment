@@ -96,6 +96,7 @@ namespace WxApi.MsgEntity
                             case EventType.UNSUBSCRIBE: msg = Utils.ConvertObj<SubEventMsg>(postStr); break;
                             case EventType.LOCATION: msg = Utils.ConvertObj<LocationEventMsg>(postStr); break;
                             case EventType.MASSSENDJOBFINISH: msg = Utils.ConvertObj<GroupJobEventMsg>(postStr); break;
+                            case EventType.CLICK: msg = Utils.ConvertObj<ClickEventMsg>(postStr); break;
                             default:
                                 msg = Utils.ConvertObj<EventMsg>(postStr); break;
                         }

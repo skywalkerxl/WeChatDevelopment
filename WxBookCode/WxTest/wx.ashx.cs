@@ -372,6 +372,20 @@ namespace WxTest
         private void ClickEventHandler(BaseMsg baseMsg)
         {
             // TODO
+            var msg = (ClickEventMsg)baseMsg;
+            Utils.OutPrint(msg.EventKey);
+            switch (msg.EventKey)
+            {
+                case "SelectionClick":
+                    List<ResArticle> acticlesMulti = new List<ResArticle>();
+                    acticlesMulti.Add(new ResArticle { Title = "闪电侠海报~", Description = "闪电侠迷~", Url = "http://skywalkerxl.free.ngrok.cc/SearchYouWant.html", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "罗技k310", Description = "图文2的描述", Url = "http://skywalkerxl.free.ngrok.cc/SearchYouWant.html", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "罗技k310", Description = "图文2的描述", Url = "http://skywalkerxl.free.ngrok.cc/SearchYouWant.html", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    acticlesMulti.Add(new ResArticle { Title = "罗技k310", Description = "图文2的描述", Url = "http://skywalkerxl.free.ngrok.cc/SearchYouWant.html", PicUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507971147471&di=954cd5f3cd5348ac55ab41cace99eb2d&imgtype=0&src=http%3A%2F%2Fimg31.mtime.cn%2FCMS%2FNews%2F2014%2F11%2F19%2F080838.63641086_620X620.jpg" });
+                    
+                    msg.ResArticles(acticlesMulti);
+                    break;
+            }
         }
         #endregion
 

@@ -315,7 +315,7 @@ namespace WxApi.MsgEntity
 
     public class SubEventMsg : EventMsg
     {
-
+        
     }
 
     public class LocationEventMsg:EventMsg
@@ -332,5 +332,11 @@ namespace WxApi.MsgEntity
         /// 地理位置精度
         /// </summary>
         public string Precision { get; set; }
+    }
+
+    public class ClickEventMsg : EventMsg
+    {
+
+        public string EventKey { get; set; }
     }
 }

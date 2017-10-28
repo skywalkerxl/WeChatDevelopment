@@ -9,7 +9,7 @@
         console.log(data);
         $('#class-recommend').addClass('dhidden');
         $('#search-content-wrap').removeClass('dhidden');
-        return false;
+        event.preventDefault();
     })
 
 });

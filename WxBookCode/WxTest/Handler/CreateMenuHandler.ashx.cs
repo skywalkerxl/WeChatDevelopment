@@ -28,13 +28,13 @@ namespace WxTest.Handler
 
             child1.Add(new BaseMenu
             {
-                url = "http://skywalkerxl.free.ngrok.cc/UI/templates/Seller/UnusedComparison.html",
+                url = "http://skywalkerxl.free.ngrok.cc/UnusedComparison.html",
                 name = "闲置对比",
                 type = MenuType.view
             });
             child1.Add(new BaseMenu
             {
-                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/Seller/UnusedEntering.html",
+                url = "http://skywalkerxl.free.ngrok.cc/UnusedEntering.html",
                 name = "闲置录入",
                 type = MenuType.view
             });
@@ -47,39 +47,39 @@ namespace WxTest.Handler
             });
             child2.Add(new BaseMenu
             {
-                url = "",
+                url = "http://skywalkerxl.free.ngrok.cc/SearchYouWant.html",
                 name = "搜你所想",
                 type = MenuType.view
             });
 
             child3.Add(new BaseMenu
             {
-                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/MyInfomation.html",
+                url = "http://skywalkerxl.free.ngrok.cc/MyInfomation.html",
                 name = "我的信息",
                 type = MenuType.view
             });
 
             child3.Add(new BaseMenu
             {
-                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/RecentActivity.html",
+                url = "http://skywalkerxl.free.ngrok.cc/RecentActivity.html",
                 name = "最近活动",
                 type = MenuType.view
             });
             child3.Add(new BaseMenu
             {
-                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/UseGuide.html",
+                url = "http://skywalkerxl.free.ngrok.cc/UseGuide.html",
                 name = "使用指南",
                 type = MenuType.view
             });
             child3.Add(new BaseMenu
             {
-                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/FeedBack.html",
+                url = "http://skywalkerxl.free.ngrok.cc/FeedBack.html",
                 name = "意见反馈",
                 type = MenuType.view
             });
             child3.Add(new BaseMenu
             {
-                key = "http://skywalkerxl.free.ngrok.cc/UI/templates/MoreInfo/AboutUs.html",
+                url = "http://skywalkerxl.free.ngrok.cc/AboutUs.html",
                 name = "关于我们",
                 type = MenuType.view
             });
