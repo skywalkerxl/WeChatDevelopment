@@ -5,11 +5,9 @@
     });
 
     // 解决键盘输入搜索的问题
-    $('#searchInput').bind('search', function (data) {
-        console.log(data);
+    $('#searchInput').bind('search', function (event) {
         $('#class-recommend').addClass('dhidden');
         $('#search-content-wrap').removeClass('dhidden');
         event.preventDefault();
     })
-
 });

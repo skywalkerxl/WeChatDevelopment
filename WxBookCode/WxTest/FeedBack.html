@@ -3,9 +3,52 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <link href="UI/static/web/MoreInfo/FeedBack/FeedBack.css" rel="stylesheet" />
     <title>意见反馈</title>
+    <script>
+        (function () {
+            html = document.documentElement;
+            hWidth = html.getBoundingClientRect().width;
+            html.style.fontSize = hWidth / 15 + 'px';
+        })();
+    </script>
 </head>
 <body>
-
+    <div class="feedback-class">
+        <div class="class-title sub-title">
+            <span>反馈类型</span>
+        </div>
+        <ul class="class-opt-wrap">
+            <li class="class-opt-list">
+                <span class="list-opt">功能建议</span>
+            </li>
+            <li class="class-opt-list">
+                <span class="list-opt">性能问题</span>
+            </li>
+            <li class="class-opt-list">
+                <span class="list-opt">其它</span>
+            </li>
+        </ul>
+    </div>
+    <div class="feedback-content">
+        <div class="content-title sub-title">
+            <span>反馈内容</span>
+        </div>
+        <!-- 反馈内容输入框 -->
+        <div class="content-main">
+            <textarea placeholder="请在这里输入您的意见"></textarea>
+        </div>
+    </div>
+    <div class="contact-way">
+        <div class="contact-title sub-title">
+            <span>联系方式</span>
+        </div>
+        <div class="contact-main">
+            <textarea placeholder="请在这里输入您的联系方式"></textarea>
+        </div>
+    </div>
+    <div class="opt-wrap">
+        <input type="button" class="submit-btn" id="submit-btn" value="提交"/>
+    </div>
 </body>
 </html>

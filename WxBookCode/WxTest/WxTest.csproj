@@ -39,6 +39,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\WxApi\bin\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\WxApi\bin\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -57,6 +63,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="demo.aspx" />
     <Content Include="Handler\UpLoadImageHandler.ashx" />
     <Content Include="Handler\CreateMenuHandler.ashx" />
     <Content Include="SearchYouWant.html" />
@@ -65,6 +72,12 @@
     <Content Include="UI\static\Library\weui.css" />
     <Content Include="UI\static\web\MoreInfo\AboutUs\AboutUs.css" />
     <Content Include="UI\static\web\MoreInfo\AboutUs\AboutUs.js" />
+    <Content Include="UI\static\web\MoreInfo\FeedBack\FeedBack.css" />
+    <Content Include="UI\static\web\MoreInfo\FeedBack\FeedBack.js" />
+    <Content Include="UI\static\web\MoreInfo\FeedBack\FeendBack.css" />
+    <Content Include="UI\static\web\MoreInfo\MyInfomation\MyInfomation.css" />
+    <Content Include="UI\static\web\MoreInfo\MyInfomation\MyInfomation.js" />
+    <Content Include="UI\static\web\MoreInfo\RecentActivity\RecentActivity.css" />
     <Content Include="UI\static\web\MoreInfo\UseGuide\UseGuide.css" />
     <Content Include="UI\static\web\MoreInfo\UseGuide\UseGuide.js" />
     <Content Include="UI\static\web\Seller\css\UnusedComparison.css" />
@@ -84,6 +97,13 @@
     <Content Include="UI\static\web\MoreInfo\AboutUs\AboutUs.less" />
     <Content Include="UI\static\web\MoreInfo\UseGuide\UseGuide.less" />
     <Content Include="UI\static\web\public\variable.less" />
+    <Content Include="UI\static\web\MoreInfo\RecentActivity\RecentActivity.less" />
+    <Content Include="UI\static\web\public\reset.less" />
+    <Content Include="UI\static\web\MoreInfo\FeedBack\FeedBack.less" />
+    <Content Include="UI\static\web\MoreInfo\MyInfomation\MyInfomation.less" />
+    <Content Include="Handler\Unused\UnusedComparison.ashx" />
+    <Content Include="Handler\Unused\UnusedEntering.ashx" />
+    <Content Include="Handler\Test\MongoDBTest.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -101,8 +121,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessTokenBox.cs" />
+    <Compile Include="demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Handler\CreateMenuHandler.ashx.cs">
       <DependentUpon>CreateMenuHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Test\MongoDBTest.ashx.cs">
+      <DependentUpon>MongoDBTest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Unused\UnusedComparison.ashx.cs">
+      <DependentUpon>UnusedComparison.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\Unused\UnusedEntering.ashx.cs">
+      <DependentUpon>UnusedEntering.ashx</DependentUpon>
     </Compile>
     <Compile Include="Handler\UpLoadImageHandler.ashx.cs">
       <DependentUpon>UpLoadImageHandler.ashx</DependentUpon>
@@ -136,9 +172,6 @@
     <Folder Include="MoreInfo\" />
     <Folder Include="Selection\" />
     <Folder Include="Seller\" />
-    <Folder Include="UI\static\web\MoreInfo\FeedBack\" />
-    <Folder Include="UI\static\web\MoreInfo\MyInfomation\" />
-    <Folder Include="UI\static\web\MoreInfo\RecentActivity\" />
     <Folder Include="UI\static\web\Selection\" />
   </ItemGroup>
   <PropertyGroup>

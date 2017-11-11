@@ -1,2 +1,30 @@
-﻿body {
+﻿@import "../../public/reset.less";
+@import "../../public/variable.less";
+body, html  {
+    width: 100%; height: 100%;
+    font-weight: normal;
+}
+.title {
+    width: 100%; height: 500/@r; 
+    line-height: 500/@r; text-align:center; font-size: 80/@r; color: #fff;
+    background: @main-bg;
+}
+.sub-title {
+    width:100%; height: 100/@r; padding-left: 40/@r;
+    line-height: 100/@r; font-size: 70/@r;
+    box-sizing: border-box;
+}
+.list-wrap {
+    width: 100%; 
+    font-size: 70/@r; 
+   
+    .list-content {
+         width: 100%; padding-left: 200/@r; margin-bottom: 100/@r;
+         box-sizing: border-box;
+         .img {
+             margin-right: 50/@r;
+         }
+         .text {
+         }
+    }
 }

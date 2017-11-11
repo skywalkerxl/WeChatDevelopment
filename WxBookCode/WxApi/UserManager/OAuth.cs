@@ -9,10 +9,10 @@ namespace WxApi.UserManager
 {
     public class OAuth
     {
-        public static string GetAuthUrl(string appid, string redirect_url, string state, AuthType authType = AuthType.snsapi_base)
+        public static string GetAuthUrl(string appid, string redirect_uri, string state, AuthType authType = AuthType.snsapi_base)
         {
-            var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid={0}&redirect_url={1}&response_type=code&scope={2}&state={3}#wechat_redirect";
-            return string.Format(url, appid, Utils.UrlEncode(redirect_url), authType, state);
+            var url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid={0}&redirect_uri={1}&response_type=code&scope={2}&state={3}#wechat_redirect";
+            return string.Format(url, appid, Utils.UrlEncode(redirect_uri), authType, state);
         }
         /// <summary>
         /// 检验授权凭证是否有效的接口

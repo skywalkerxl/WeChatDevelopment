@@ -1,0 +1,48 @@
+﻿@import "../../public/reset.less";
+@import "../../public/variable.less";
+
+@li-height: 120/@r;
+
+.warn {
+    color: #f00;
+}
+body, html {
+    height:100%;
+}
+// 标题部分
+.title { 
+    height: 80/@r; padding-left: 30/@r;
+    font-size: 40/@r; line-height: 80/@r;
+    background: #eee; 
+}
+.list-content {
+    li {
+        display: flex; display: -webkit-flex;
+        height: @li-height; margin: 20/@r 0;
+        font-size: 35/@r; line-height: @li-height;
+        .goods-title {
+            flex: 2; 
+            text-align:center; 
+            border-right: 1/@r solid @main-bg; 
+        }
+        .goods-desc {
+            flex: 4; padding-left: 20/@r;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .opt-btn {
+            flex: 1; 
+            text-align:center; line-height: @li-height;
+            .iconfont {
+                width: 100/@r; height: 60/@r;
+                font-size: 60/@r; color: @main-bg;
+            }
+        }
+    }
+}
+.MyUnused-list {
+    
+}
+.MyCollection {
+    
+}

@@ -5,6 +5,7 @@ using System.Web;
 using WxApi;
 using WxApi.MsgEntity;
 using WxApi.SendEntity;
+using System.Web.SessionState;
 
 namespace WxTest
 {
@@ -37,10 +38,16 @@ namespace WxTest
                 //System.Diagnostics.Debug.WriteLine(xml);
                 //System.Diagnostics.Debug.WriteLine("---------------------- Receive the xml message End ----------------------");
                 //context.Response.Write("");
+                string openid = context.Request.Params["openid"];
+                Utils.OutPrint(openid);
+
+                if (SessionUtils.Get("openid") == null)
+                {
+                    SessionUtils.Add("openid", openid);
+                }
 
                 // 判断MsgHandlerEntities是否为空，如果是，则实例化，并将各个消息类型的处理程序实体添加到此列表中
                 // 因为MsgHandlerEntities是静态变量，之需绑定一次即可，免去了重复绑定的性能损耗
-                
                 if(MsgHandlerEntity.MsgHandlerEntities == null)
                 {
                     MsgHandlerEntity.MsgHandlerEntities = new List<MsgHandlerEntity>();

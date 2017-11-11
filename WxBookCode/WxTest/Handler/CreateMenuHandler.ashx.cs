@@ -6,6 +6,7 @@ using WxApi.ReceiveEntity;
 using WxApi.SendEntity;
 using WxApi.MsgEntity;
 using WxApi;
+using WxApi.UserManager;
 
 namespace WxTest.Handler
 {
@@ -25,10 +26,13 @@ namespace WxTest.Handler
             var child2 = new List<BaseMenu>();
             var child3 = new List<BaseMenu>();
             var basebtn = new List<BaseMenu>();
+            string rUrl = OAuth.GetAuthUrl("wxf50808b364418ffb", "http://skywalkerxl.free.ngrok.cc/UnusedEntering.html", "success");
+
+
 
             child1.Add(new BaseMenu
             {
-                url = "http://skywalkerxl.free.ngrok.cc/UnusedComparison.html",
+                url = rUrl,
                 name = "闲置对比",
                 type = MenuType.view
             });
@@ -168,9 +172,7 @@ namespace WxTest.Handler
                 name = "发图",
                 sub_button = child3
             });
-             
-             */
-
+            */
 
             var ret = WxApi.Menu.Create(new MenuEntity { button = basebtn }, accessToken);
             context.Response.Write("状态码：" + ret.ErrCode + "状态描述：" + ret.ErrDescription);

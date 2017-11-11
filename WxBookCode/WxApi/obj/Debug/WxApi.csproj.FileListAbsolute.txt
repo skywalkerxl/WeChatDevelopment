@@ -11,3 +11,5 @@ D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\obj\Debug\WxApi.csproj.Genera
 D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\obj\Debug\WxApi.dll
 D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\obj\Debug\WxApi.pdb
 D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\obj\Debug\WxApi.csprojResolveAssemblyReference.cache
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\bin\Debug\MongoDB.Bson.dll
+D:\MyRepository\WeChatDevelopment\WxBookCode\WxApi\bin\Debug\MongoDB.Driver.dll

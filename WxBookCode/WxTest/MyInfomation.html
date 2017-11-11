@@ -1,11 +1,168 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <title>我的信息</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <link href="UI/static/Library/AliIcon/iconfont.css" rel="stylesheet" />
+    <link href="UI/static/web/MoreInfo/MyInfomation/MyInfomation.css" rel="stylesheet" />
+    <script>
+        (function () {
+            html = document.documentElement;
+            hWidth = html.getBoundingClientRect().width;
+            html.style.fontSize = hWidth / 15 + 'px';
+        })();
+    </script>
 </head>
 <body>
+    <div class="weui-pull-to-refresh__layer">
+        <div class='weui-pull-to-refresh__arrow'></div>
+        <div class='weui-pull-to-refresh__preloader'></div>
+        <div class="down">下拉刷新</div>
+        <div class="up">释放刷新</div>
+        <div class="refresh">正在刷新</div>
+    </div>
+    <div class="MyUnused-list">
+        <h2 class="title">我的闲置物品</h2>
+        <ul class="list-content" id="list-content">
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="MyCollection">
+        <h3 class="title">我收藏的物品</h3>
+        <ul class="list-content" id="list-content">
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+            <li>
+                <div class="goods-title">闲置物品</div>
+                <div class="goods-desc">闲置物品描述</div>
+                <div class="opt-btn">
+                    <i class="iconfont">&#xe651;</i>
+                </div>
+            </li>
+        </ul>
+    </div>
 
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+    <script src="UI/static/web/MoreInfo/MyInfomation/MyInfomation.js"></script>
 </body>
 </html>

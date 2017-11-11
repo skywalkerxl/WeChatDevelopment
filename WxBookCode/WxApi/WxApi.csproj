@@ -30,11 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>bin\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>bin\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -57,6 +64,12 @@
     <Compile Include="GroupSend.cs" />
     <Compile Include="JsApi.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MongoDbHelper.cs" />
+    <Compile Include="MongoDB\CollectionNames.cs" />
+    <Compile Include="MongoDB\DbConfigParams.cs" />
+    <Compile Include="MongoDB\EntityBase.cs" />
+    <Compile Include="MongoDB\State.cs" />
+    <Compile Include="MongoDB\Student.cs" />
     <Compile Include="MsgEntity\BaseMenuEventMsg.cs" />
     <Compile Include="MsgEntity\BaseMsg.cs" />
     <Compile Include="MsgEntity\BMsg.cs" />
@@ -93,6 +106,7 @@
     <Compile Include="SendEntity\ResMusic.cs" />
     <Compile Include="SendEntity\ResVideo.cs" />
     <Compile Include="SendEntity\ResVoice.cs" />
+    <Compile Include="SessionUtils.cs" />
     <Compile Include="UserManager\AuthType.cs" />
     <Compile Include="UserManager\BaseUser.cs" />
     <Compile Include="UserManager\OAuth.cs" />

@@ -1,0 +1,69 @@
+html,
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+input {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei";
+  font-weight: 200;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+input {
+  border: none;
+  outline: none;
+}
+.warn {
+  color: #f00;
+}
+body,
+html {
+  height: 100%;
+}
+.title {
+  height: 1.6rem;
+  padding-left: 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1.6rem;
+  background: #eee;
+}
+.list-content li {
+  display: flex;
+  display: -webkit-flex;
+  height: 2.4rem;
+  margin: 0.4rem 0;
+  font-size: 0.7rem;
+  line-height: 2.4rem;
+}
+.list-content li .goods-title {
+  flex: 2;
+  text-align: center;
+  border-right: 0.02rem solid #89c4f4;
+}
+.list-content li .goods-desc {
+  flex: 4;
+  padding-left: 0.4rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+.list-content li .opt-btn {
+  flex: 1;
+  text-align: center;
+  line-height: 2.4rem;
+}
+.list-content li .opt-btn .iconfont {
+  width: 2rem;
+  height: 1.2rem;
+  font-size: 1.2rem;
+  color: #89c4f4;
+}
