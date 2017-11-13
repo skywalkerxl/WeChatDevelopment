@@ -17,7 +17,7 @@ namespace WxTest.Handler.Test
 
         public void ProcessRequest(HttpContext context)
         {
-            InsertTest();
+            DeleteTest();
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace WxTest.Handler.Test
             {
                 foreach(var item in ltModel)
                 {
-                    Console.WriteLine("姓名：{0}，年龄：{1}，状态：{2}", item.Name, item.Age, GetStateDesc(item.State));
+                    System.Diagnostics.Debug.WriteLine("姓名：{0}，年龄：{1}，状态：{2}", item.Name, item.Age, GetStateDesc(item.State));
                 }
             }
         }

@@ -88,6 +88,7 @@
     <Content Include="FeedBack.html" />
     <Content Include="MyInfomation.html" />
     <Content Include="RecentActivity.html" />
+    <Content Include="UI\static\web\Seller\js\UpLoadImg.js" />
     <Content Include="UseGuide.html" />
     <Content Include="UnusedComparison.html" />
     <Content Include="UnusedEntering.html" />
