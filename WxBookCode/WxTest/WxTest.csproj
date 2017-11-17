@@ -69,6 +69,9 @@
     <Content Include="SearchYouWant.html" />
     <Content Include="UI\static\Library\AliIcon\iconfont.css" />
     <Content Include="UI\static\Library\img\UseGuide.png" />
+    <Content Include="UI\static\Library\JS\plupload\js\moxie.js" />
+    <Content Include="UI\static\Library\JS\plupload\js\plupload.dev.js" />
+    <Content Include="UI\static\Library\JS\qiniu\js\qiniu.js" />
     <Content Include="UI\static\Library\weui.css" />
     <Content Include="UI\static\web\MoreInfo\AboutUs\AboutUs.css" />
     <Content Include="UI\static\web\MoreInfo\AboutUs\AboutUs.js" />

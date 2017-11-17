@@ -5,7 +5,7 @@
             option: 'getAuth'
         },
         success: function (data) {
-            alert(data);
+            // alert(data);
         },
         error: function (res) {
 

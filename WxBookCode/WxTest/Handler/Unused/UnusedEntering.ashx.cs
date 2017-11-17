@@ -16,10 +16,10 @@ namespace WxTest.Handler.Unused
 
         public void ProcessRequest(HttpContext context)
         {
-            var openid = HttpContext.Current.Session["openid"];
-            context.Response.Write(openid);
-            //context.Response.ContentType = "text/plain";
-            //context.Response.Write("Hello World");
+            // var openid = HttpContext.Current.Session["openid"];
+            // context.Response.Write(openid);
+            // context.Response.ContentType = "text/plain";
+            // context.Response.Write("Hello World");
         }
 
         public bool IsReusable
